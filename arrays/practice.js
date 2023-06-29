@@ -124,6 +124,30 @@ var numbersArray = [1, 2, 34, 54, 55, 34, 32, 11, 19, 17, 54, 66, 13];
 */
 
 //Code Here
+function divider (numbersArray)
+{
+  let evens = [];
+  let odds = [];
+  let j = 0;
+  let c = 0;
+
+  for (let i = 0; i < numbersArray.length; i++)
+  {
+    if (numbersArray[i] % 2 === 0)
+    {
+      evens[j] = numbersArray[i];
+      j++;
+    }
+    else
+    {
+      odds[c] = numbersArray[i];
+      c++;
+    }
+  }
+
+  let newArr = [evens, odds];
+  return newArr;
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -144,6 +168,24 @@ var getRandomArbitrary = function () {
 */
 
 //Code Here
+function finder (arr)
+{
+  let randomNumber = getRandomArbitrary();
+  let isTrue = false;
+
+  for (let i = 0; i < arr.length; i++)
+  {
+    if (arr[i] === randomNumber)
+    {
+      isTrue = true;
+    }
+    else 
+    {
+      isTrue = false;
+    }
+  }
+  return isTrue;
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -171,6 +213,45 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem (myGroceryList, item)
+{
+  for (let i = 0; i < myGroceryList.length; i++)
+  {
+    if (myGroceryList[i] === item)
+    {
+      myGroceryList.splice (i, 1);
+    }
+  }
+
+  let empty = [];
+
+  if (!myGroceryList || !item)
+  {
+    return empty;
+  }
+  else if (myGroceryList || item)
+  {
+    return myGroceryList;
+  }
+
+}
+
+function addItem (myGroceryList, item)
+{
+  myGroceryList.push(item);
+
+  let empty = [];
+
+  if (!myGroceryList || !item)
+  {
+    return empty;
+  }
+  else if (myGroceryList || item)
+  {
+    return myGroceryList;
+  }
+  
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -179,6 +260,18 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function maker ()
+{
+  let arr = [];
+
+  for (let i = 1; i < 216; i++)
+  {
+    arr[i - 1] = i; 
+  }
+
+  return arr;
+}
+
 
 ////////// PROBLEM 10 //////////
 
@@ -193,6 +286,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
+function addTen (numbers)
+{
+  for (let i = 0; i < numbers.length; i++)
+  {
+    numbers[i] = Number(10) + Number(numbers[i]);
+  }
+
+  return numbers;
+}
 
 ////////// PROBLEM 11 //////////
 
@@ -369,9 +471,9 @@ users =
 //Code Here
 for (let i = 0; i < users.length; i++)
 {
-  if (user1.email === "mciver@devmounta.in")
+  if (users.email === "mciver@devmounta.in")
   {
-    users.splice(0, 1);
+    users.splice(i, 1);
   }
 }
 
